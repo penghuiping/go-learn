@@ -14,9 +14,9 @@ func main() {
 	//collection.MapExample()
 	//collection.SliceExample()
 	//
-	//_io.FileIOExample()
-	//_io.OSArgsExample()
-	//_io.StdioExample()
+	//sysio.FileIOExample()
+	//sysio.OSArgsExample()
+	//sysio.StdioExample()
 	//
 	//object_function.FuncExample()
 	//object_function.InterfaceExample()
