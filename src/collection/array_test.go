@@ -1,8 +1,11 @@
 package collection
 
-import "fmt"
+import (
+	"fmt"
+	"testing"
+)
 
-func ArrayExample() {
+func TestArrayExample(in *testing.T) {
 
 	fmt.Println("==================>初始化数组默认值为0<==================")
 	var arr1 [5]int

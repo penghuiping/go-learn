@@ -3,6 +3,7 @@ package exception
 import (
 	"errors"
 	"fmt"
+	"testing"
 )
 
 //自定义错误
@@ -59,7 +60,7 @@ func error1Func(value int) (string, error) {
 	return result, err;
 }
 
-func ErrorExample() {
+func TestErrorExample(in *testing.T) {
 	var err error;
 	var a string;
 	//a, err = errorFunc(1);
@@ -72,7 +73,7 @@ func ErrorExample() {
 	}
 }
 
-func ErrorExample1() {
+func TestErrorExample1(in *testing.T) {
 	var err error;
 	var a string;
 	//a, err = error1Func(-1);

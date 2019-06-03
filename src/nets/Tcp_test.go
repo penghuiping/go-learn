@@ -3,11 +3,12 @@ package nets
 import (
 	"net"
 	"fmt"
+	"testing"
 )
 
 var conns chan net.Conn
 
-func TcpServerExample() {
+func TestTcpServerExample(in *testing.T) {
 	lis, err := net.Listen("tcp", "127.0.0.1:8080")
 	if err != nil {
 		fmt.Println("出错啦!", err)
@@ -25,7 +26,7 @@ func TcpServerExample() {
 	}
 }
 
-func TcpClientExample() {
+func TestTcpClientExample(in *testing.T) {
 	var i int
 	for i = 0; i < 1000; i++ {
 		go func() {

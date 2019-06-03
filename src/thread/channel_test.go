@@ -9,6 +9,7 @@ import (
 	"time"
 	"math/rand"
 	"strconv"
+	"testing"
 )
 
 type Message struct {
@@ -32,7 +33,7 @@ func receive(ch chan *Message, fn func(msg *Message)) {
 	}
 }
 
-func ChannelExample() {
+func TestChannelExample(in *testing.T) {
 	//设置线程数量，类似定义一个线程池
 	runtime.GOMAXPROCS(2)
 

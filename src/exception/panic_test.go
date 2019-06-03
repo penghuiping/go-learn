@@ -1,6 +1,9 @@
 package exception
 
-import "fmt"
+import (
+	"fmt"
+	"testing"
+)
 
 func panicFunc() {
 	defer fmt.Println("defer才是最后执行的,就算遇到panic错误也会执行")
@@ -20,6 +23,6 @@ func catchPanicFunc() {
 	panicFunc()
 }
 
-func PanicExample() {
+func TestPanicExample(in *testing.T) {
 	catchPanicFunc()
 }

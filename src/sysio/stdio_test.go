@@ -4,9 +4,10 @@ import (
 	"bufio"
 	"fmt"
 	"os"
+	"testing"
 )
 
-func StdioExample() {
+func TestStdioExample(in *testing.T) {
 	var reader = bufio.NewReader(os.Stdin)
 	fmt.Println("请输入一些数据")
 	var value, err = reader.ReadString('\n')

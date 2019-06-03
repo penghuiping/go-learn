@@ -3,6 +3,7 @@ package basic_type
 import (
 	"fmt"
 	"time"
+	"testing"
 )
 
 //格式化日期必须是下面这种格式，2006-01-02 15:04:02时间是go语言诞生的日子
@@ -16,7 +17,7 @@ const (
 	newtime     = "15~04~02"
 )
 
-func DoActionTime() {
+func TestDoActionTime(in *testing.T) {
 	//格式化时间
 	t := time.Now()
 	fmt.Println(t.Format(date))

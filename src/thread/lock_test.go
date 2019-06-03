@@ -4,6 +4,7 @@ import (
 	"sync"
 	"runtime"
 	"fmt"
+	"testing"
 )
 
 var count = 0
@@ -25,7 +26,7 @@ func countMinus() {
 /*
 使用互斥锁保证同步
  */
-func LockExample() {
+func TestLockExample(in *testing.T) {
 	//设置线程数量，类似定义一个线程池
 	runtime.GOMAXPROCS(8)
 

@@ -2,14 +2,9 @@ package test
 
 import (
 	"testing"
-	"basic_type"
 )
 
-func TestFunc(t testing.T) {
-	basic_type.DoActionTime();
+func TestFunc(t *testing.T) {
 	t.Fail()
 }
 
-func TestBenchmark(b testing.B) {
-
-}

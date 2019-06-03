@@ -3,6 +3,7 @@ package object_function
 import (
 	"fmt"
 	"reflect"
+	"testing"
 )
 
 type student1 struct {
@@ -10,7 +11,7 @@ type student1 struct {
 	age  int    "年龄"
 }
 
-func ReflectExample() {
+func TestReflectExample(in *testing.T) {
 	//使用反射分析结构体
 	var stu = student1{"jack", 12}
 	var stuRef = reflect.ValueOf(stu)

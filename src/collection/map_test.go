@@ -1,6 +1,9 @@
 package collection
 
-import "fmt"
+import (
+	"fmt"
+	"testing"
+)
 
 func printMap(a *map[string]int) {
 	for p, v := range *a {
@@ -8,7 +11,7 @@ func printMap(a *map[string]int) {
 	}
 }
 
-func MapExample() {
+func TestMapExample(in *testing.T) {
 	fmt.Println("===========>华丽的分割线<===========")
 	//初始化
 	var mapLit = map[string]int{"key0": 1, "key1": 2}

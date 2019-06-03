@@ -3,9 +3,10 @@ package basic_type
 import (
 	"fmt"
 	"strconv"
+	"testing"
 )
 
-func DoActionBase() {
+func TestDoActionBase(in *testing.T) {
 
 	//打印
 	fmt.Println("Hello, World!")

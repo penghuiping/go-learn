@@ -1,6 +1,9 @@
 package object_function
 
-import "fmt"
+import (
+	"fmt"
+	"testing"
+)
 
 //接口定义
 type shape interface {
@@ -31,7 +34,7 @@ func cacArea(a shape) {
 	fmt.Println((a).area())
 }
 
-func InterfaceExample() {
+func TestInterfaceExample(in *testing.T) {
 	//多态,注意var r [shape]后缀
 	var r shape = &rectangle{12.0, 13.0}
 	var s shape = &square{12.0}

@@ -1,6 +1,9 @@
 package collection
 
-import "fmt"
+import (
+	"fmt"
+	"testing"
+)
 
 //用切片作为函数的入参
 func add(a []int) int {
@@ -14,7 +17,7 @@ func add(a []int) int {
 /**
 * slice是数组的引用
  */
-func SliceExample() {
+func TestSliceExample(in *testing.T) {
 	var arr1 = [3]int{1, 2, 3}
 
 	//声明切片

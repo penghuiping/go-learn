@@ -4,9 +4,10 @@ import (
 	"fmt"
 	"strconv"
 	"strings"
+	"testing"
 )
 
-func DoActionStrings() {
+func TestDoActionStrings(in *testing.T) {
 
 	var b1 = "hello" + "world";
 	fmt.Println(b1);

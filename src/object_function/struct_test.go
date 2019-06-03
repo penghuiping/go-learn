@@ -3,6 +3,7 @@ package object_function
 import (
 	"fmt"
 	"reflect"
+	"testing"
 )
 
 //结构体定义
@@ -23,7 +24,7 @@ type Teacher struct {
 	Name string "名字"
 }
 
-func StructExample() {
+func TestStructExample(in *testing.T) {
 
 	//结构体初始化new方式
 	var stu = new(student)

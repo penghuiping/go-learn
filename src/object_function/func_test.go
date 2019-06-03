@@ -3,6 +3,7 @@ package object_function
 import (
 	"fmt"
 	"time"
+	"testing"
 )
 
 //多个参数，一个返回值
@@ -41,7 +42,7 @@ func phpAdd1(a1 int, b1 int) int {
 	}(a1, b1)
 }
 
-func FuncExample() {
+func TestFuncExample(in *testing.T) {
 	i := add(1, 2)
 	fmt.Println(i)
 

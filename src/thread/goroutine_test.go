@@ -5,9 +5,10 @@ import (
 	"sync"
 	"runtime"
 	"time"
+	"testing"
 )
 
-func GoRoutineExample() {
+func TestGoRoutineExample(t *testing.T) {
 	//设置线程数量，类似定义一个线程池
 	runtime.GOMAXPROCS(2)
 
@@ -50,9 +51,12 @@ func GoRoutineExample() {
 	wg.Wait()
 }
 
-func GoRoutingExample2() {
+func TestGoRoutingExample2(t *testing.T) {
 	c1 := make(chan string)
 	c2 := make(chan string)
+
+	defer close(c1)
+	defer close(c2)
 
 	go func() {
 		for {
@@ -72,4 +76,36 @@ func GoRoutingExample2() {
 		fmt.Println(<-c1)
 		fmt.Println(<-c2)
 	}
+}
+
+func TestGoRoutingExample3(t *testing.T) {
+	c1 := make(chan string)
+	c2 := make(chan string)
+
+	defer close(c1)
+	defer close(c2)
+
+	go func() {
+		for {
+			c1 <- "500ms"
+			time.Sleep(time.Millisecond * 500)
+		}
+	}()
+
+	go func() {
+		for {
+			c2 <- "2s"
+			time.Sleep(time.Second * 2)
+		}
+	}()
+
+	for {
+		select {
+		case msg1 := <-c1:
+			fmt.Println(msg1)
+		case msg2 := <-c2:
+			fmt.Println(msg2)
+		}
+	}
+
 }
