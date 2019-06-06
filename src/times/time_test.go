@@ -1,4 +1,4 @@
-package basic_type
+package times
 
 import (
 	"fmt"
@@ -24,6 +24,6 @@ func TestDoActionTime(in *testing.T) {
 	fmt.Println(t.Format(datetime))
 
 	//计算三天后的时间
-	tt := t.AddDate(0, 0, -3)
+	tt := t.AddDate(0, 0, 60)
 	fmt.Println(tt.Format(datetime))
 }

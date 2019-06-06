@@ -88,7 +88,7 @@ func TestGoRoutingExample3(t *testing.T) {
 	go func() {
 		for {
 			c1 <- "500ms"
-			time.Sleep(time.Millisecond * 500)
+			time.Sleep(time.Second * 5)
 		}
 	}()
 
@@ -106,6 +106,7 @@ func TestGoRoutingExample3(t *testing.T) {
 		case msg2 := <-c2:
 			fmt.Println(msg2)
 		}
+		fmt.Println("print something")
 	}
 
 }

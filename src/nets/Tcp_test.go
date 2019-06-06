@@ -4,6 +4,7 @@ import (
 	"net"
 	"fmt"
 	"testing"
+	"strings"
 )
 
 var conns chan net.Conn
@@ -53,4 +54,31 @@ func TestTcpClientExample(in *testing.T) {
 func conn(conn net.Conn) {
 	conns <- conn
 	fmt.Println("连接成功,当前数量", len(conns))
+}
+
+func TestNet(in *testing.T) {
+	server()
+}
+
+func server() {
+	li, _ := net.Listen("tcp", "127.0.0.1:8081")
+	for {
+		conn, _ := li.Accept()
+		go func(c *net.Conn) {
+			defer (*c).Close()
+			buf := make([]byte, 1024)
+
+			for {
+				start := 0;
+				index,_:= (*c).Read(buf)
+				content := string(buf[start:index])
+				fmt.Println(content)
+				if strings.Contains(content,"quit") {
+					break
+				}
+
+			}
+		}(&conn)
+	}
+
 }
