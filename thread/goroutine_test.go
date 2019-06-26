@@ -105,6 +105,8 @@ func TestGoRoutingExample3(t *testing.T) {
 			fmt.Println(msg1)
 		case msg2 := <-c2:
 			fmt.Println(msg2)
+		default:
+
 		}
 		fmt.Println("print something")
 	}
